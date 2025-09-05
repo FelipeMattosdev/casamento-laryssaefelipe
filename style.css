@@ -11,7 +11,7 @@ body, h1, h2, p, a {
 }
 
 body {
-  background-image: url('imagem/fundo-laryssa.jpg');
+  background-image: url('img/fundo-laryssa.jpg');
   background-repeat: no-repeat;
   background-position: center top;
   background-attachment: fixed;
@@ -88,7 +88,7 @@ main {
   max-width: 900px;
   margin: 2rem auto;
   padding: 2rem 1rem;
-  background-image: url('imagem/seu-fundo-cards.jpg');
+  background-image: url('img/seu-fundo-cards.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -237,7 +237,7 @@ footer {
 }
 
 .header-com-monograma {
-  background-image: url('imagem/monogramaLF.jpeg');
+  background-image: url('img/monogramaLF.jpeg');
   background-size: contain;
   background-position: center top;
   background-repeat: no-repeat;
@@ -246,4 +246,5 @@ footer {
   padding-bottom: 1rem;
   text-align: center;
 }
+
 
