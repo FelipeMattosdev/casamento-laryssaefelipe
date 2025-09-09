@@ -167,6 +167,7 @@ p {
   gap: 12px;
   padding: 1rem 0;
   scroll-snap-type: x mandatory;
+  scroll-padding-left: 12px; /* garante que a primeira imagem fique alinhada */
 }
 
 .slides img {
@@ -274,6 +275,7 @@ footer {
     max-height: 250px;
   }
 }
+
 
 
 
