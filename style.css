@@ -151,35 +151,67 @@ p {
   background-color: #718a4a;
 }
 
-/* Carrossel manual, todas as fotos visíveis */
-.carousel {
-  overflow-x: auto;          /* permite rolagem horizontal */
-  display: flex;
-  gap: 12px;                 /* espaço entre imagens */
-  padding: 1rem 0;
-  scroll-behavior: smooth;   /* rolagem suave */
+/* Carrossel manual avançado */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.slides {
+.carousel {
   display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
   gap: 12px;
-}
-
-.slides img {
-  flex: 0 0 auto;            /* impede que encolham */
-  width: 250px;               /* largura controlada para evitar zoom */
-  height: 200px;              /* altura fixa para consistência */
-  object-fit: cover;          /* mantém proporção sem distorcer */
-  border-radius: 12px;
-  cursor: grab;               /* indica que pode arrastar */
-}
-
-/* Scroll snap para encaixar imagens suavemente */
-.carousel {
+  padding: 1rem 0;
   scroll-snap-type: x mandatory;
 }
+
 .slides img {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: grab;
   scroll-snap-align: start;
+}
+
+/* Setas de navegação */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(85,107,47,0.8);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+.arrow-left { left: 5px; }
+.arrow-right { right: 5px; }
+
+/* Indicadores de posição */
+.carousel-indicators {
+  text-align: center;
+  margin-top: 10px;
+}
+.carousel-indicators span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 4px;
+  cursor: pointer;
+}
+.carousel-indicators .active {
+  background-color: #556B2F;
 }
 
 /* Responsivo */
@@ -187,6 +219,10 @@ p {
   .slides img {
     width: 180px;
     height: 150px;
+  }
+  .arrow {
+    font-size: 1.2rem;
+    padding: 0.3rem 0.6rem;
   }
 }
 
@@ -238,6 +274,7 @@ footer {
     max-height: 250px;
   }
 }
+
 
 
 
