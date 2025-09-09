@@ -151,37 +151,45 @@ p {
   background-color: #718a4a;
 }
 
-/* Carrossel */
+/* Carrossel manual, todas as fotos visíveis */
 .carousel {
-  overflow-x: auto; /* permite rolar horizontalmente */
-  scroll-behavior: smooth; /* rolagem suave */
+  overflow-x: auto;          /* permite rolagem horizontal */
   display: flex;
-  gap: 10px; /* espaço entre imagens */
-  padding-bottom: 10px;
-  border-radius: 12px;
+  gap: 12px;                 /* espaço entre imagens */
+  padding: 1rem 0;
+  scroll-behavior: smooth;   /* rolagem suave */
 }
 
 .slides {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 }
 
 .slides img {
-  flex: 0 0 auto; /* impede que encolha */
-  width: 100%;
-  max-width: 300px; /* controla o zoom das imagens */
-  height: auto;
+  flex: 0 0 auto;            /* impede que encolham */
+  width: 250px;               /* largura controlada para evitar zoom */
+  height: 200px;              /* altura fixa para consistência */
+  object-fit: cover;          /* mantém proporção sem distorcer */
   border-radius: 12px;
-  object-fit: cover;
-  cursor: grab; /* indica que pode arrastar */
+  cursor: grab;               /* indica que pode arrastar */
 }
 
-/* Para mobile */
+/* Scroll snap para encaixar imagens suavemente */
+.carousel {
+  scroll-snap-type: x mandatory;
+}
+.slides img {
+  scroll-snap-align: start;
+}
+
+/* Responsivo */
 @media (max-width: 600px) {
   .slides img {
-    max-width: 200px;
+    width: 180px;
+    height: 150px;
   }
 }
+
 
 
 
@@ -230,6 +238,7 @@ footer {
     max-height: 250px;
   }
 }
+
 
 
 
