@@ -31,16 +31,32 @@ body::before {
   z-index: -1;
 }
 
-/* Cabeçalho com monograma */
+/* Cabeçalho fixo com monograma + contador */
 .header-com-monograma {
   background-image: url('img/monogramaLF.jpeg');
   background-size: contain;
   background-position: center top;
   background-repeat: no-repeat;
   background-color: #798e71;
-  padding-top: 220px; /* altura da imagem do monograma */
+  padding-top: 220px;
   padding-bottom: 1rem;
   text-align: center;
+  position: relative;
+}
+
+/* Contador no topo */
+#contador {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: rgba(255,255,255,0.7);
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+  color: #556B2F;
+  white-space: nowrap;
 }
 
 /* Conteúdo principal */
@@ -76,7 +92,7 @@ main > .card {
   padding: 2rem;
   margin-bottom: 2rem;
   border-radius: 10px;
-  text-align: center; /* 🔥 isso centraliza os títulos e textos dentro de cada card */
+  text-align: center;
 }
 
 /* Seção Bem-vindos */
@@ -93,15 +109,6 @@ main > .card {
   text-align: center;
 }
 
-/* Remova o seletor .bem-vindos h2
-.bem-vindos h2 {
-  font-family: 'Parisienne', cursive;
-  font-size: 2.4rem;
-  margin-bottom: 20px;
-  color: #556B2F;
-}
-*/
-
 .bem-vindos p {
   font-family: 'Quicksand', sans-serif;
   font-size: 1.1rem;
@@ -117,7 +124,7 @@ main > .card {
   color: #556B2F;
 }
 
-/* Títulos - Este seletor já aplica a fonte a todos os h2, incluindo o da seção de boas-vindas */
+/* Títulos */
 h2 {
   font-family: 'Parisienne', cursive;
   font-size: 2.4rem;
@@ -131,6 +138,15 @@ p {
   margin-bottom: 1rem;
   font-size: 1.1rem;
   font-family: 'Quicksand', sans-serif;
+}
+
+/* Localização - AJUSTADO */
+#local p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+  text-align: center;
 }
 
 /* Botões */
@@ -151,42 +167,46 @@ p {
   background-color: #718a4a;
 }
 
+/* Carrossel */
 .carousel-container {
   position: relative;
   overflow-x: auto;
   scroll-behavior: smooth;
   width: 100%;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 1rem 0;
   display: flex;
-  gap: 12px;
+  gap: 16px;
 }
-
 .carousel-container::-webkit-scrollbar {
-  display: none; /* remove a barra de rolagem */
+  display: none;
 }
-
 .carousel-container img {
   flex: 0 0 auto;
-  width: 250px;
-  height: 200px;
+  width: 320px; /* aumentado */
+  height: 260px; /* aumentado */
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 14px;
   cursor: grab;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+}
+.carousel-container img:hover {
+  transform: scale(1.05);
 }
 
 /* Responsivo */
 @media (max-width: 600px) {
   .carousel-container img {
-    width: 180px;
-    height: 150px;
+    width: 200px;
+    height: 160px;
+  }
+  #contador {
+    font-size: 0.85rem;
+    padding: 4px 10px;
   }
 }
-
-
-
-
 
 /* Rodapé */
 footer {
@@ -205,13 +225,11 @@ footer {
   padding-left: 0;
   margin-top: 1rem;
 }
-
 .presentes-lista li {
   margin-bottom: 1.4rem;
   padding-bottom: 0.8rem;
   border-bottom: 1px solid #d4d4d4;
 }
-
 .presentes-lista a {
   font-weight: 700;
   color: #556B2F;
@@ -219,21 +237,9 @@ footer {
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
 .presentes-lista a:hover {
   color: #d4af37;
 }
-
-/* Responsivo */
-@media (max-width: 600px) {
-  .carousel {
-    max-width: 100%;
-  }
-  .slides img {
-    max-height: 250px;
-  }
-}
-
 
 
 
