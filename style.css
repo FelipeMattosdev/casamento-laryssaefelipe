@@ -1,12 +1,12 @@
 /* Fontes */
-@import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Le+Jour+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Quicksand:wght@300;400;500&display=swap');
 
 /* Reset e fonte */
 body, h1, h2, p, a {
   margin: 0;
   padding: 0;
-  font-family: 'Bellefair', serif;
-  color: #00000; /* Verde-oliva */
+  font-family: 'Quicksand', sans-serif;
+  color: #000;
   line-height: 1.6;
 }
 
@@ -32,55 +32,16 @@ body::before {
   z-index: -1;
 }
 
-/* Cabeçalho */
-header {
-  background-color: #556B2F;
-  padding: 1rem 2rem;
+/* Cabeçalho com monograma */
+.header-com-monograma {
+  background-image: url('img/monogramaLF.jpeg');
+  background-size: contain;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #798e71;
+  padding-top: 220px; /* altura da imagem do monograma */
+  padding-bottom: 1rem;
   text-align: center;
-  color: white;
-  font-family: 'Le Jour Script', cursive;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.2rem;
-}
-
-/* Contador */
-.countdown-box {
-  display: inline-block;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 0.3rem 1rem;
-  border-radius: 10px;
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #ffffff;
-  animation: blink 1.8s ease-in-out infinite;
-  user-select: none;
-  margin-top: 0.5rem;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.65; }
-}
-
-nav {
-  margin-top: 0.8rem;
-}
-
-nav a {
-  color: #d8d4c9;
-  margin: 0 1rem;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-  font-family: 'Le Jour Script', cursive;
-}
-
-nav a:hover {
-  color: #d4af37;
 }
 
 /* Conteúdo principal */
@@ -94,7 +55,6 @@ main {
   background-repeat: no-repeat;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(85,107,47,0.2);
-  color: white;
   position: relative;
   overflow: hidden;
 }
@@ -110,7 +70,7 @@ main::before {
 
 main > .card {
   position: relative;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 6px 12px rgba(85,107,47,0.1);
   color: #556B2F;
   z-index: 1;
@@ -119,9 +79,45 @@ main > .card {
   border-radius: 10px;
 }
 
+/* Seção Bem-vindos */
+.bem-vindos {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 6px 12px rgba(85,107,47,0.1);
+  color: #556B2F;
+  z-index: 1;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 10px;
+  max-width: 800px;
+  text-align: center;
+}
+
+.bem-vindos h2 {
+  font-family: 'Parisienne', cursive;
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  color: #556B2F;
+}
+
+.bem-vindos p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.bem-vindos .assinatura {
+  margin-top: 30px;
+  font-size: 1.4rem;
+  font-family: 'Parisienne', cursive;
+  color: #556B2F;
+}
+
 /* Títulos */
 h2 {
-  font-family: 'Le Jour Script', cursive;
+  font-family: 'Parisienne', cursive;
   font-size: 2rem;
   margin-bottom: 1rem;
   color: #556B2F;
@@ -131,12 +127,25 @@ h2 {
 p {
   margin-bottom: 1rem;
   font-size: 1.1rem;
-  font-family: 'Bellefair', serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
-.dourado {
-  color: #d4af37;
+/* Botões */
+.btn {
+  display: inline-block;
+  background-color: #556B2F;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 30px;
   font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.btn:hover {
+  background-color: #718a4a;
 }
 
 /* Carrossel */
@@ -162,24 +171,6 @@ p {
   object-fit: cover;
 }
 
-/* Botões */
-.btn {
-  display: inline-block;
-  background-color: #556B2F;
-  color: white;
-  padding: 0.8rem 1.6rem;
-  border-radius: 30px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  margin-top: 1rem;
-  font-family: 'Bellefair', serif;
-}
-
-.btn:hover {
-  background-color: #718a4a;
-}
-
 /* Rodapé */
 footer {
   text-align: center;
@@ -188,7 +179,7 @@ footer {
   color: #556B2F;
   background-color: #f9faf7;
   margin-top: 3rem;
-  font-family: 'Bellefair', serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
 /* Lista de Presentes */
@@ -216,12 +207,6 @@ footer {
   color: #d4af37;
 }
 
-.presentes-lista p {
-  font-size: 1rem;
-  color: #444;
-  margin-top: 0.3rem;
-}
-
 /* Responsivo */
 @media (max-width: 600px) {
   .carousel {
@@ -230,49 +215,4 @@ footer {
   .slides img {
     max-height: 250px;
   }
-  nav a {
-    margin: 0 0.5rem;
-    font-size: 0.9rem;
-  }
 }
-
-.header-com-monograma {
-  background-image: url('img/monogramaLF.jpeg');
-  background-size: contain;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-color: #798e71;
-  padding-top: 220px; /* altura da imagem do monograma */
-  padding-bottom: 1rem;
-  text-align: center;
-}
-
-
-.bem-vindos {
-  padding: 60px 20px;
-  background-color: #fdfdfd;
-  text-align: center;
-  border-top: 2px solid #556B2F22; /* linha bem suave em verde-oliva */
-  border-bottom: 2px solid #556B2F22;
-}
-
-.bem-vindos h2 {
-  font-size: 2rem;
-  color: #556B2F; /* verde-oliva */
-  margin-bottom: 20px;
-}
-
-.bem-vindos p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.bem-vindos .assinatura {
-  margin-top: 30px;
-  font-size: 1.2rem;
-  font-style: italic;
-  color: #556B2F;
-}
-
