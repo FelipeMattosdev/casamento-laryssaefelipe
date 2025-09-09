@@ -116,7 +116,7 @@ main > .card {
 
 /* Títulos */
 h2 {
-  font-family: 'Le Jour Script', cursive;
+  font-family: 'Parisienne', cursive;
   font-size: 2.4rem;
   margin-bottom: 1rem;
   color: #556B2F;
@@ -216,6 +216,7 @@ footer {
     max-height: 250px;
   }
 }
+
 
 
 
