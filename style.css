@@ -82,7 +82,7 @@ main > .card {
 /* Seção Bem-vindos */
 .bem-vindos {
   position: relative;
-  background: 55, 255, 255, 1;
+  background: rgba(255, 255, 255, 1);
   box-shadow: 0 6px 12px rgba(85,107,47,0.1);
   color: #556B2F;
   z-index: 1;
@@ -93,12 +93,14 @@ main > .card {
   text-align: center;
 }
 
+/* Remova o seletor .bem-vindos h2
 .bem-vindos h2 {
   font-family: 'Parisienne', cursive;
   font-size: 2.4rem;
   margin-bottom: 20px;
   color: #556B2F;
 }
+*/
 
 .bem-vindos p {
   font-family: 'Quicksand', sans-serif;
@@ -115,13 +117,13 @@ main > .card {
   color: #556B2F;
 }
 
-/* Títulos */
+/* Títulos - Este seletor já aplica a fonte a todos os h2, incluindo o da seção de boas-vindas */
 h2 {
   font-family: 'Parisienne', cursive;
   font-size: 2.4rem;
   margin-bottom: 1rem;
   color: #556B2F;
-  text-align: center; /* centraliza todos os títulos */
+  text-align: center;
 }
 
 /* Parágrafos */
@@ -217,6 +219,7 @@ footer {
     max-height: 250px;
   }
 }
+
 
 
 
