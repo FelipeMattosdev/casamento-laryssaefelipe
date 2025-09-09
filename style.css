@@ -82,7 +82,7 @@ main > .card {
 /* Seção Bem-vindos */
 .bem-vindos {
   position: relative;
-  background: rgba(255, 255, 255, 0.9);
+  background: #fff; /* fundo branco igual aos outros */
   box-shadow: 0 6px 12px rgba(85,107,47,0.1);
   color: #556B2F;
   z-index: 1;
@@ -216,3 +216,4 @@ footer {
     max-height: 250px;
   }
 }
+
