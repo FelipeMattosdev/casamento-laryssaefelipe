@@ -1,26 +1,16 @@
-function updateCountdown() {
-  const now = new Date().getTime();
-  const eventDate = new Date('2026-01-17T17:00:00').getTime();
-  const diff = eventDate - now;
+const slides = document.querySelector("#slide-container");
+const images = slides.querySelectorAll("img");
+const totalImages = images.length;
+let index = 0;
 
-  if (diff < 0) {
-    document.getElementById('countdown-header').innerHTML = 'Evento já ocorreu!';
-    clearInterval(interval);
-    return;
+function showNextSlide() {
+  index++;
+  if (index >= totalImages) {
+    index = 0;
   }
-
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-  document.getElementById('countdown-header').innerHTML = `
-    <span>${days}d</span> :
-    <span>${hours}h</span> :
-    <span>${minutes}m</span> :
-    <span>${seconds}s</span>
-  `;
+  const offset = -index * 100; // move a largura de uma imagem
+  slides.style.transform = `translateX(${offset}%)`;
 }
 
-const interval = setInterval(updateCountdown, 1000);
-updateCountdown();
+// Troca automática a cada 5 segundos
+setInterval(showNextSlide, 5000);
