@@ -152,7 +152,6 @@ p {
 }
 
 /* Carrossel */
-./* Carrossel */
 .carousel {
   overflow: hidden;
   width: 100%;
@@ -183,6 +182,7 @@ p {
     max-height: 250px;
   }
 }
+
 
 
 /* Rodapé */
@@ -230,6 +230,7 @@ footer {
     max-height: 250px;
   }
 }
+
 
 
 
