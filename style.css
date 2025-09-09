@@ -68,6 +68,7 @@ main::before {
 }
 main > .card {
   position: relative;
+  font-family: 'Great Vibes', sans-serif,'Great Vibes';
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 6px 12px rgba(85,107,47,0.1);
   color: #556B2F;
@@ -216,6 +217,7 @@ footer {
     max-height: 250px;
   }
 }
+
 
 
 
