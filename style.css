@@ -153,33 +153,33 @@ p {
 
 /* Carrossel */
 .carousel {
-  overflow: hidden;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+  overflow-x: auto; /* permite rolar horizontalmente */
+  scroll-behavior: smooth; /* rolagem suave */
+  display: flex;
+  gap: 10px; /* espaço entre imagens */
+  padding-bottom: 10px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(85,107,47,0.15);
-  position: relative;
 }
 
 .slides {
   display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: calc(100% * 6); /* número total de imagens */
+  gap: 10px;
 }
 
 .slides img {
+  flex: 0 0 auto; /* impede que encolha */
   width: 100%;
-  flex-shrink: 0;
-  max-height: 350px;
+  max-width: 300px; /* controla o zoom das imagens */
+  height: auto;
   border-radius: 12px;
   object-fit: cover;
+  cursor: grab; /* indica que pode arrastar */
 }
 
-/* Responsivo */
+/* Para mobile */
 @media (max-width: 600px) {
   .slides img {
-    max-height: 250px;
+    max-width: 200px;
   }
 }
 
@@ -230,6 +230,7 @@ footer {
     max-height: 250px;
   }
 }
+
 
 
 
