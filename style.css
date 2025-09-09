@@ -1,5 +1,8 @@
 /* Fontes */
 @import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Quicksand:wght@300;400;500&display=swap');
+/* Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Quicksand:wght@300;400;500&family=Le+Jour+Script&display=swap');
+
 
 /* Reset e fonte */
 body, h1, h2, p, a {
@@ -217,6 +220,7 @@ footer {
     max-height: 250px;
   }
 }
+
 
 
 
