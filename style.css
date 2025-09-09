@@ -248,3 +248,31 @@ footer {
 }
 
 
+.bem-vindos {
+  padding: 60px 20px;
+  background-color: #fdfdfd;
+  text-align: center;
+  border-top: 2px solid #556B2F22; /* linha bem suave em verde-oliva */
+  border-bottom: 2px solid #556B2F22;
+}
+
+.bem-vindos h2 {
+  font-size: 2rem;
+  color: #556B2F; /* verde-oliva */
+  margin-bottom: 20px;
+}
+
+.bem-vindos p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.bem-vindos .assinatura {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #556B2F;
+}
+
