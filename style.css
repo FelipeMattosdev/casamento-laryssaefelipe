@@ -42,17 +42,16 @@ body::before {
   position: relative;
 }
 
-/* Contador circular moderno sem fundo */
+/* Contador moderno sem fundo */
 #contador {
   position: absolute;
-  top: 10px;
+  top: 15px;
   right: 15px;
   display: flex;
   gap: 12px;
   justify-content: flex-end;
   align-items: center;
-  padding: 0; /* remove padding */
-  background: none; /* remove qualquer fundo */
+  color: #fff;
 }
 
 .countdown-item {
@@ -60,7 +59,6 @@ body::before {
   width: 60px;
   height: 60px;
   text-align: center;
-  color: #ffffff; /* números brancos */
   font-family: 'Quicksand', sans-serif;
 }
 
@@ -76,11 +74,11 @@ body::before {
 .countdown-item svg circle {
   fill: none;
   stroke-width: 4;
-  stroke: rgba(255,255,255,0.2); /* círculo de fundo suave */
+  stroke: rgba(255,255,255,0.3);
 }
 
 .countdown-item svg circle:nth-child(2) {
-  stroke: #ffffff; /* barra animada branca */
+  stroke: #fff;
   stroke-linecap: round;
   stroke-dasharray: 176;
   stroke-dashoffset: 176;
@@ -98,67 +96,7 @@ body::before {
 .countdown-item span {
   display: block;
   font-size: 10px;
-  margin-top: -12px;
-  color: #ffffff; /* texto em branco */
-}
-
-/* Contador circular moderno sem fundo */
-#contador.countdown-container {
-  display: flex;
-  gap: 12px;
-  justify-content: flex-end;
-  align-items: center;
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  padding: 0; /* sem fundo */
-}
-
-.countdown-item {
-  position: relative;
-  width: 60px;
-  height: 60px;
-  text-align: center;
-  color: #ffffff; /* números brancos */
-  font-family: 'Quicksand', sans-serif;
-}
-
-.countdown-item svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: rotate(-90deg);
-  width: 60px;
-  height: 60px;
-}
-
-.countdown-item svg circle {
-  fill: none;
-  stroke-width: 4;
-  stroke: rgba(255,255,255,0.2); /* círculo de fundo mais suave */
-}
-
-.countdown-item svg circle:nth-child(2) {
-  stroke: #ffffff; /* barra animada branca */
-  stroke-linecap: round;
-  stroke-dasharray: 176;
-  stroke-dashoffset: 176;
-  transition: stroke-dashoffset 0.5s linear;
-}
-
-.countdown-item .number {
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 60px;
-  position: relative;
-  z-index: 1;
-}
-
-.countdown-item span {
-  display: block;
-  font-size: 10px;
-  margin-top: -12px;
-  color: #ffffff; /* texto em branco */
+   color: #fff;
 }
 
 /* Conteúdo */
@@ -178,7 +116,8 @@ main {
 
 main::before {
   content: "";
-  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
   background-color: rgba(0, 0, 0, 0.35);
   border-radius: 12px;
   z-index: 0;
@@ -186,7 +125,7 @@ main::before {
 
 main > .card {
   position: relative;
-  background: rgba(255, 255, 255, 0.9);
+  background: #fff;
   box-shadow: 0 6px 12px rgba(85,107,47,0.1);
   color: #556B2F;
   z-index: 1;
@@ -196,31 +135,22 @@ main > .card {
   text-align: center;
 }
 
-/* Container do Bem-vindos */
-#bem-vindos .container {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center; /* centraliza todo o conteúdo */
-  padding: 0 1rem;   /* evita que o texto encoste nas laterais em telas pequenas */
+/* Bem-vindos */
+.bem-vindos p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #333;
 }
 
-.bem-vindos {
-  position: relative;
-  background: rgba(255, 255, 255, 0.9); /* mesmo fundo dos cards */
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(85,107,47,0.1);
-  color: #556B2F;
-  text-align: center;
-  margin-bottom: 2rem;
-  z-index: 1;
-}
-
-.bem-vindos p,
-.bem-vindos h2,
 .bem-vindos .assinatura {
-  color: #556B2F; /* mantém o texto verde-oliva como nos cards */
+  margin-top: 30px;
+  font-size: 1.4rem;
+  font-family: 'Parisienne', cursive;
+  color: #556B2F;
 }
+
 /* Títulos */
 h2 {
   font-family: 'Parisienne', cursive;
@@ -244,6 +174,7 @@ h2 {
   margin-top: 1rem;
   text-align: center;
 }
+
 .map-links a {
   font-family: 'Quicksand', sans-serif;
   font-size: 1rem;
@@ -252,12 +183,9 @@ h2 {
   font-weight: bold;
   text-decoration: none;
 }
-.map-links a:first-child {
-  color: #d4af37;
-}
-.map-links a:last-child {
-  color: #556B2F;
-}
+
+.map-links a:first-child { color: #d4af37; }
+.map-links a:last-child { color: #556B2F; }
 
 /* Botões */
 .btn {
@@ -272,9 +200,8 @@ h2 {
   margin-top: 1rem;
   font-family: 'Quicksand', sans-serif;
 }
-.btn:hover {
-  background-color: #718a4a;
-}
+
+.btn:hover { background-color: #718a4a; }
 
 /* Carrossel */
 .carousel-container {
@@ -288,9 +215,9 @@ h2 {
   display: flex;
   gap: 16px;
 }
-.carousel-container::-webkit-scrollbar {
-  display: none;
-}
+
+.carousel-container::-webkit-scrollbar { display: none; }
+
 .carousel-container img {
   flex: 0 0 auto;
   width: 320px;
@@ -301,20 +228,16 @@ h2 {
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   transition: transform 0.3s ease;
 }
-.carousel-container img:hover {
-  transform: scale(1.05);
-}
+
+.carousel-container img:hover { transform: scale(1.05); }
 
 /* Responsivo */
 @media (max-width: 600px) {
-  .carousel-container img {
-    width: 200px;
-    height: 160px;
-  }
-  #contador {
-    font-size: 0.85rem;
-    padding: 4px 10px;
-  }
+  .carousel-container img { width: 200px; height: 160px; }
+  #contador { top: 10px; right: 10px; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .countdown-item { width: 50px; height: 50px; }
+  .countdown-item .number { font-size: 14px; line-height: 50px; }
+  .countdown-item span { font-size: 9px; }
 }
 
 /* Rodapé */
@@ -327,8 +250,6 @@ footer {
   margin-top: 3rem;
   font-family: 'Quicksand', sans-serif;
 }
-
-
 
 
 
