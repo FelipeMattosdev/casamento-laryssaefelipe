@@ -42,62 +42,81 @@ body::before {
   position: relative;
 }
 
-/* Contador moderno sem fundo */
+/* Contador moderno */
 #contador {
   position: absolute;
   top: 15px;
   right: 15px;
   display: flex;
-  gap: 12px;
-  justify-content: flex-end;
-  align-items: center;
-  color: #fff;
+  gap: 10px;
+  z-index: 5;
+  flex-wrap: wrap;
 }
 
 .countdown-item {
   position: relative;
   width: 60px;
   height: 60px;
-  text-align: center;
-  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .countdown-item svg {
   position: absolute;
-  top: 0;
-  left: 0;
-  transform: rotate(-90deg);
   width: 60px;
   height: 60px;
+  transform: rotate(-90deg);
 }
 
 .countdown-item svg circle {
   fill: none;
   stroke-width: 4;
-  stroke: rgba(255,255,255,0.3);
 }
 
-.countdown-item svg circle:nth-child(2) {
-  stroke: #fff;
-  stroke-linecap: round;
-  stroke-dasharray: 176;
-  stroke-dashoffset: 176;
+.countdown-item svg circle:first-child {
+  stroke: rgba(255,255,255,0.2); /* fundo do círculo */
+}
+
+.countdown-item svg circle:last-child {
+  stroke: #fff; /* cor do círculo de contagem */
+  stroke-dasharray: 175; /* 2 * PI * 28 */
+  stroke-dashoffset: 0;
   transition: stroke-dashoffset 0.5s linear;
 }
 
 .countdown-item .number {
+  position: relative;
+  color: #fff;
   font-size: 16px;
   font-weight: bold;
-  line-height: 60px;
-  position: relative;
+  font-family: 'Quicksand', sans-serif;
   z-index: 1;
 }
 
 .countdown-item span {
-  display: block;
+  position: absolute;
+  bottom: -18px;
   font-size: 10px;
-   color: #fff;
+  color: #fff;
 }
+
+/* Responsivo */
+@media (max-width: 600px) {
+  #contador {
+    top: 10px;
+    right: 10px;
+    gap: 6px;
+  }
+  .countdown-item {
+    width: 50px;
+    height: 50px;
+  }
+  .countdown-item .number { font-size: 14px; }
+  .countdown-item span { font-size: 8px; bottom: -15px; }
+  .countdown-item svg { width: 50px; height: 50px; }
+}
+
 
 /* Conteúdo */
 main {
@@ -250,6 +269,7 @@ footer {
   margin-top: 3rem;
   font-family: 'Quicksand', sans-serif;
 }
+
 
 
 
