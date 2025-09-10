@@ -1,4 +1,47 @@
-// scripts.js
+// Carrossel
+const carousel = document.querySelector("#slide-container");
+const images = carousel.querySelectorAll("img");
+const indicatorsContainer = document.querySelector("#carousel-indicators");
+
+let currentIndex = 0;
+
+// Criar indicadores
+images.forEach((_, i) => {
+  const dot = document.createElement("span");
+  if (i === 0) dot.classList.add("active");
+  dot.addEventListener("click", () => scrollToSlide(i));
+  indicatorsContainer.appendChild(dot);
+});
+
+const indicators = indicatorsContainer.querySelectorAll("span");
+
+function updateIndicators(index) {
+  indicators.forEach(dot => dot.classList.remove("active"));
+  indicators[index].classList.add("active");
+}
+
+function scrollToSlide(index) {
+  const gap = 12;
+  const imageWidth = images[0].offsetWidth + gap;
+  carousel.scrollTo({ left: imageWidth * index, behavior: "smooth" });
+  currentIndex = index;
+  updateIndicators(currentIndex);
+}
+
+carousel.addEventListener("scroll", () => {
+  const gap = 12;
+  const imageWidth = images[0].offsetWidth + gap;
+  const index = Math.round(carousel.scrollLeft / imageWidth);
+  if (index !== currentIndex) {
+    currentIndex = index;
+    updateIndicators(currentIndex);
+  }
+});
+
+// Garantir que comece na 1ª imagem
+window.addEventListener("load", () => {
+  carousel.scrollTo({ left: 0, behavior: "auto" });
+});
 
 // Contagem regressiva
 function iniciarContagem() {
