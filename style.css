@@ -214,18 +214,18 @@ footer {
   margin-top: 3rem;
   font-family: 'Quicksand', sans-serif;
 }
-/* --- Contador Circular --- */
-#contador.countdown-container {
+/* --- Contador Circular Moderno --- */
+#contador {
+  position: fixed; /* Fica sempre no topo */
+  top: 15px;
+  right: 15px;
   display: flex;
   gap: 12px;
-  justify-content: flex-end;
-  align-items: center;
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  background: rgba(255, 255, 255, 0.6);
-  padding: 6px 10px;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.6); /* leve transparência */
+  padding: 8px 12px;
+  border-radius: 14px;
+  z-index: 999;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .countdown-item {
@@ -233,8 +233,7 @@ footer {
   width: 60px;
   height: 60px;
   text-align: center;
-  color: #556B2F;
-  font-family: 'Quicksand', sans-serif;
+  color: #556B2F; /* verde-oliva */
 }
 
 .countdown-item svg {
@@ -249,30 +248,31 @@ footer {
 .countdown-item svg circle {
   fill: none;
   stroke-width: 4;
-  stroke: rgba(85,107,47,0.3);
+  stroke: rgba(85,107,47,0.2); /* fundo do círculo */
 }
 
-.countdown-item svg circle:nth-child(2) {
-  stroke: #556B2F;
+.countdown-item svg circle.active {
+  stroke: #556B2F; /* verde-oliva moderno */
   stroke-linecap: round;
-  stroke-dasharray: 176; /* circunferência de r=28 */
+  stroke-dasharray: 176; /* circunferência r=28 */
   stroke-dashoffset: 176;
   transition: stroke-dashoffset 0.5s linear;
 }
 
 .countdown-item .number {
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 60px;
   position: relative;
   z-index: 1;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 60px;
 }
 
 .countdown-item span {
   display: block;
   font-size: 10px;
   margin-top: -12px;
-  color: #333;
+  color: #556B2F;
+  font-weight: 600;
 }
 
 
