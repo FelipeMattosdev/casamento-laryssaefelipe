@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Casamento Felipe & Laryssa</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Fontes Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Quicksand:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -41,13 +44,14 @@
     <!-- Fotos -->
     <section id="fotos" class="card">
       <h2>Nossas Fotos</h2>
-      <div class="carousel-container">
+      <div class="carousel-container" id="slide-container">
         <img src="img/img-porta.jpeg" alt="Felipe segurando a mão da Laryssa com vaso e folhas de trigo" />
         <img src="img/img-oq02.jpeg" alt="Felipe e Laryssa juntos na Avenida Paulista" />
         <img src="img/img-oq01.jpeg" alt="Foto 3" />
         <img src="img/img-portajuntos.jpeg" alt="Foto 4" />
         <img src="img/img-pb.jpeg" alt="Foto 5" />
       </div>
+      <div id="carousel-indicators"></div>
     </section>
 
     <!-- Local -->
@@ -70,17 +74,13 @@
         </iframe>
       </div>
 
-      <div style="margin-top:1rem; text-align:center;">
+      <div class="map-links">
         <a href="https://www.google.com/maps/dir/?api=1&destination=Av.+Washington+Lu%C3%ADs,+302+-+Gonzaga,+Santos+-+SP" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           style="display:inline-block; margin:0.5rem; color:#d4af37; font-weight:bold; text-decoration:none;">
+           target="_blank" rel="noopener noreferrer">
           📍 ABRIR GOOGLE MAPS
         </a>
         <a href="https://waze.com/ul?ll=-23.967486,-46.329464&navigate=yes" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           style="display:inline-block; margin:0.5rem; color:#556B2F; font-weight:bold; text-decoration:none;">
+           target="_blank" rel="noopener noreferrer">
           📍 ABRIR WAZE
         </a>
       </div>
@@ -116,7 +116,7 @@
     <p>© 2025 Felipe & Laryssa - Todos os direitos reservados.</p>
   </footer>
 
+  <!-- JS -->
   <script src="scripts.js"></script>
 </body>
 </html>
-
