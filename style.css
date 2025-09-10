@@ -214,6 +214,66 @@ footer {
   margin-top: 3rem;
   font-family: 'Quicksand', sans-serif;
 }
+/* --- Contador Circular --- */
+#contador.countdown-container {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 6px 10px;
+  border-radius: 12px;
+}
+
+.countdown-item {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  color: #556B2F;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.countdown-item svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  width: 60px;
+  height: 60px;
+}
+
+.countdown-item svg circle {
+  fill: none;
+  stroke-width: 4;
+  stroke: rgba(85,107,47,0.3);
+}
+
+.countdown-item svg circle:nth-child(2) {
+  stroke: #556B2F;
+  stroke-linecap: round;
+  stroke-dasharray: 176; /* circunferência de r=28 */
+  stroke-dashoffset: 176;
+  transition: stroke-dashoffset 0.5s linear;
+}
+
+.countdown-item .number {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.countdown-item span {
+  display: block;
+  font-size: 10px;
+  margin-top: -12px;
+  color: #333;
+}
 
 
 
