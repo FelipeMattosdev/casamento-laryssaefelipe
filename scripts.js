@@ -43,28 +43,46 @@ window.addEventListener("load", () => {
   carousel.scrollTo({ left: 0, behavior: "auto" });
 });
 
-// Contagem regressiva
-function iniciarContagem() {
-  const destino = new Date("Jan 17, 2026 19:00:00").getTime();
+// === Contagem Regressiva Circular ===
+const weddingDate = new Date("2026-01-17T19:00:00").getTime();
 
-  const timer = setInterval(() => {
-    const agora = new Date().getTime();
-    const distancia = destino - agora;
+const daysElement = document.getElementById("days");
+const hoursElement = document.getElementById("hours");
+const minutesElement = document.getElementById("minutes");
+const secondsElement = document.getElementById("seconds");
 
-    if (distancia < 0) {
-      clearInterval(timer);
-      document.getElementById("contador").innerHTML = "O grande dia chegou! 💍";
-      return;
-    }
+const daysCircle = document.getElementById("days-circle");
+const hoursCircle = document.getElementById("hours-circle");
+const minutesCircle = document.getElementById("minutes-circle");
+const secondsCircle = document.getElementById("seconds-circle");
 
-    const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-    const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+const circleLength = 176; // circunferência do círculo
 
-    document.getElementById("contador").innerHTML =
-      `⏳ ${dias}d ${horas}h ${minutos}m ${segundos}s`;
-  }, 1000);
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = weddingDate - now;
+
+  if (distance <= 0) {
+    document.getElementById("contador").innerHTML = "💍 Chegou o grande dia!";
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  daysElement.textContent = days.toString().padStart(2, "0");
+  hoursElement.textContent = hours.toString().padStart(2, "0");
+  minutesElement.textContent = minutes.toString().padStart(2, "0");
+  secondsElement.textContent = seconds.toString().padStart(2, "0");
+
+  daysCircle.style.strokeDashoffset = circleLength - (days % 365) * (circleLength / 365);
+  hoursCircle.style.strokeDashoffset = circleLength - (hours % 24) * (circleLength / 24);
+  minutesCircle.style.strokeDashoffset = circleLength - (minutes % 60) * (circleLength / 60);
+  secondsCircle.style.strokeDashoffset = circleLength - (seconds % 60) * (circleLength / 60);
 }
-iniciarContagem();
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
 
