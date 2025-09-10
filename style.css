@@ -4,7 +4,7 @@
 body, h1, h2, p, a {
   margin: 0;
   padding: 0;
-  font-family: 'Great Vibes', sans-serif,'Great Vibes';
+  font-family: 'Quicksand', sans-serif;
   color: #000;
   line-height: 1.6;
 }
@@ -19,19 +19,17 @@ body {
   position: relative;
 }
 
-/* Overlay branco suave no body */
+/* Overlay branco suave */
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background-color: rgba(255,255,255,0.65);
   z-index: -1;
 }
 
-/* Cabeçalho fixo com monograma + contador */
+/* Cabeçalho com monograma */
 .header-com-monograma {
   background-image: url('img/monogramaLF.jpeg');
   background-size: contain;
@@ -44,7 +42,7 @@ body::before {
   position: relative;
 }
 
-/* Contador no topo */
+/* Contador */
 #contador {
   position: absolute;
   top: 10px;
@@ -59,14 +57,14 @@ body::before {
   white-space: nowrap;
 }
 
-/* Conteúdo principal */
+/* Conteúdo */
 main {
   max-width: 900px;
   margin: 2rem auto;
   padding: 2rem 1rem;
   background-image: url('img/seu-fundo-cards.jpg');
   background-size: cover;
-  background-position: center center;
+  background-position: center;
   background-repeat: no-repeat;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(85,107,47,0.2);
@@ -76,15 +74,14 @@ main {
 
 main::before {
   content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
   background-color: rgba(0, 0, 0, 0.35);
   border-radius: 12px;
   z-index: 0;
 }
+
 main > .card {
   position: relative;
-  font-family: 'Great Vibes', sans-serif,'Great Vibes';
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 6px 12px rgba(85,107,47,0.1);
   color: #556B2F;
@@ -95,20 +92,7 @@ main > .card {
   text-align: center;
 }
 
-/* Seção Bem-vindos */
-.bem-vindos {
-  position: relative;
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 6px 12px rgba(85,107,47,0.1);
-  color: #556B2F;
-  z-index: 1;
-  padding: 2rem;
-  margin: 2rem auto;
-  border-radius: 10px;
-  max-width: 800px;
-  text-align: center;
-}
-
+/* Bem-vindos */
 .bem-vindos p {
   font-family: 'Quicksand', sans-serif;
   font-size: 1.1rem;
@@ -133,20 +117,33 @@ h2 {
   text-align: center;
 }
 
-/* Parágrafos */
-p {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  font-family: 'Quicksand', sans-serif;
-}
-
-/* Localização - AJUSTADO */
+/* Localização */
 #local p {
   font-family: 'Quicksand', sans-serif;
   font-size: 1.2rem;
   line-height: 1.8;
   color: #333;
   text-align: center;
+}
+
+/* Links do mapa */
+.map-links {
+  margin-top: 1rem;
+  text-align: center;
+}
+.map-links a {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  display: inline-block;
+  margin: 0.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.map-links a:first-child {
+  color: #d4af37;
+}
+.map-links a:last-child {
+  color: #556B2F;
 }
 
 /* Botões */
@@ -162,7 +159,6 @@ p {
   margin-top: 1rem;
   font-family: 'Quicksand', sans-serif;
 }
-
 .btn:hover {
   background-color: #718a4a;
 }
@@ -184,8 +180,8 @@ p {
 }
 .carousel-container img {
   flex: 0 0 auto;
-  width: 320px; /* aumentado */
-  height: 260px; /* aumentado */
+  width: 320px;
+  height: 260px;
   object-fit: cover;
   border-radius: 14px;
   cursor: grab;
@@ -218,31 +214,6 @@ footer {
   margin-top: 3rem;
   font-family: 'Quicksand', sans-serif;
 }
-
-/* Lista de Presentes */
-.presentes-lista {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 1rem;
-}
-.presentes-lista li {
-  margin-bottom: 1.4rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid #d4d4d4;
-}
-.presentes-lista a {
-  font-weight: 700;
-  color: #556B2F;
-  font-size: 1.2rem;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-.presentes-lista a:hover {
-  color: #d4af37;
-}
-
-
-
 
 
 
