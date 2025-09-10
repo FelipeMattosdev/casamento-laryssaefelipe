@@ -1,13 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Quicksand:wght@300;400;500&family=Great+Vibes&display=swap');
+
+/* Reset e fonte */
+body, h1, h2, p, a {
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  color: #000;
+  line-height: 1.6;
+}
+
+body {
+  background-image: url('img/fundo-laryssa.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Overlay branco suave */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.65);
+  z-index: -1;
+}
+
+/* Cabeçalho com monograma */
+.header-com-monograma {
+  background-image: url('img/monogramaLF.jpeg');
+  background-size: contain;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: #798e71;
+  padding-top: 220px;
+  padding-bottom: 1rem;
+  text-align: center;
+  position: relative;
+}
+
 /* --- Contador Circular Moderno --- */
-#contador {
-  position: absolute; /* dentro do header, sem interferir no main */
-  top: 15px;
+.countdown-container {
+  position: absolute;
+  top: 10px;
   right: 15px;
   display: flex;
-  gap: 12px;
-  background: rgba(255, 255, 255, 0.6);
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.7);
   padding: 6px 12px;
-  border-radius: 14px;
+  border-radius: 12px;
   font-family: 'Quicksand', sans-serif;
   z-index: 10;
 }
@@ -33,6 +79,7 @@
   fill: none;
   stroke-width: 4;
   stroke: rgba(85,107,47,0.2);
+  transition: stroke-dashoffset 0.5s linear;
 }
 
 .countdown-item svg circle.active {
@@ -40,7 +87,6 @@
   stroke-linecap: round;
   stroke-dasharray: 176;
   stroke-dashoffset: 176;
-  transition: stroke-dashoffset 0.5s linear;
 }
 
 .countdown-item .number {
@@ -58,6 +104,190 @@
   color: #556B2F;
   font-weight: 600;
 }
+
+/* Conteúdo */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+  background-image: url('img/seu-fundo-cards.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(85,107,47,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  border-radius: 12px;
+  z-index: 0;
+}
+
+main > .card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 6px 12px rgba(85,107,47,0.1);
+  color: #556B2F;
+  z-index: 1;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Bem-vindos */
+.bem-vindos p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.bem-vindos .assinatura {
+  margin-top: 30px;
+  font-size: 1.4rem;
+  font-family: 'Parisienne', cursive;
+  color: #556B2F;
+}
+
+/* Títulos */
+h2 {
+  font-family: 'Parisienne', cursive;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  color: #556B2F;
+  text-align: center;
+}
+
+/* Localização */
+#local p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+  text-align: center;
+}
+
+/* Links do mapa */
+.map-links {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.map-links a {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  display: inline-block;
+  margin: 0.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.map-links a:first-child {
+  color: #d4af37;
+}
+
+.map-links a:last-child {
+  color: #556B2F;
+}
+
+/* Botões */
+.btn {
+  display: inline-block;
+  background-color: #556B2F;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.btn:hover {
+  background-color: #718a4a;
+}
+
+/* Carrossel */
+.carousel-container {
+  position: relative;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  display: flex;
+  gap: 16px;
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-container img {
+  flex: 0 0 auto;
+  width: 320px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 14px;
+  cursor: grab;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+}
+
+.carousel-container img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .carousel-container img {
+    width: 200px;
+    height: 160px;
+  }
+  .countdown-container {
+    top: 5px;
+    right: 10px;
+    gap: 6px;
+    padding: 4px 8px;
+  }
+  .countdown-item {
+    width: 45px;
+    height: 45px;
+  }
+  .countdown-item svg {
+    width: 45px;
+    height: 45px;
+  }
+  .countdown-item .number {
+    font-size: 12px;
+    line-height: 45px;
+  }
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: #556B2F;
+  background-color: #f9faf7;
+  margin-top: 3rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
 
 
 
