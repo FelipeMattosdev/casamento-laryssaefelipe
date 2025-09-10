@@ -77,6 +77,7 @@ function updateCountdown() {
   minutesElement.textContent = minutes.toString().padStart(2, "0");
   secondsElement.textContent = seconds.toString().padStart(2, "0");
 
+  // Atualiza círculos
   daysCircle.style.strokeDashoffset = circleLength - (days % 365) * (circleLength / 365);
   hoursCircle.style.strokeDashoffset = circleLength - (hours % 24) * (circleLength / 24);
   minutesCircle.style.strokeDashoffset = circleLength - (minutes % 60) * (circleLength / 60);
@@ -85,4 +86,5 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
 
