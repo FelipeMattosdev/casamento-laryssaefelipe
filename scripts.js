@@ -41,7 +41,7 @@ window.addEventListener("load", () => {
   updateIndicators(currentIndex);
 });
 
-// --- Contagem Regressiva Circular ---
+// --- Contagem regressiva circular ---
 const weddingDate = new Date("2026-01-17T19:00:00").getTime();
 
 const daysElement = document.getElementById("days");
@@ -61,7 +61,7 @@ function updateCountdown() {
   const distance = weddingDate - now;
 
   if (distance <= 0) {
-    document.getElementById("contador").innerHTML = "💍 Chegou o grande dia!";
+    document.getElementById("contador").innerHTML = "💍 O grande dia chegou!";
     return;
   }
 
@@ -70,16 +70,17 @@ function updateCountdown() {
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  daysElement.textContent = days.toString().padStart(2, "0");
-  hoursElement.textContent = hours.toString().padStart(2, "0");
-  minutesElement.textContent = minutes.toString().padStart(2, "0");
-  secondsElement.textContent = seconds.toString().padStart(2, "0");
+  daysElement.textContent = String(days).padStart(2, "0");
+  hoursElement.textContent = String(hours).padStart(2, "0");
+  minutesElement.textContent = String(minutes).padStart(2, "0");
+  secondsElement.textContent = String(seconds).padStart(2, "0");
 
   daysCircle.style.strokeDashoffset = circleLength - (days % 365) * (circleLength / 365);
-  hoursCircle.style.strokeDashoffset = circleLength - (
-
+  hoursCircle.style.strokeDashoffset = circleLength - (hours % 24) * (circleLength / 24);
+  minutesCircle.style.strokeDashoffset = circleLength - (minutes % 60) * (circleLength / 60);
+  secondsCircle.style.strokeDashoffset = circleLength - (seconds % 60) * (circleLength / 60);
+}
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
-
 
