@@ -1,9 +1,10 @@
-// --- Carrossel ---
+// Carrossel
 const carousel = document.querySelector("#slide-container");
 const images = carousel.querySelectorAll("img");
 const indicatorsContainer = document.querySelector("#carousel-indicators");
 let currentIndex = 0;
 
+// Criar indicadores
 images.forEach((_, i) => {
   const dot = document.createElement("span");
   if (i === 0) dot.classList.add("active");
@@ -38,49 +39,43 @@ carousel.addEventListener("scroll", () => {
 
 window.addEventListener("load", () => {
   carousel.scrollTo({ left: 0, behavior: "auto" });
-  updateIndicators(currentIndex);
 });
 
-// --- Contagem regressiva circular ---
-const weddingDate = new Date("2026-01-17T19:00:00").getTime();
+// Contador moderno
+function iniciarContagem() {
+  const destino = new Date("Jan 17, 2026 19:00:00").getTime();
+  const timer = setInterval(() => {
+    const agora = new Date().getTime();
+    const distancia = destino - agora;
 
-const daysElement = document.getElementById("days");
-const hoursElement = document.getElementById("hours");
-const minutesElement = document.getElementById("minutes");
-const secondsElement = document.getElementById("seconds");
+    if (distancia < 0) {
+      clearInterval(timer);
+      document.getElementById("contador").innerHTML = "O grande dia chegou! 💍";
+      return;
+    }
 
-const daysCircle = document.getElementById("days-circle");
-const hoursCircle = document.getElementById("hours-circle");
-const minutesCircle = document.getElementById("minutes-circle");
-const secondsCircle = document.getElementById("seconds-circle");
+    const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
 
-const circleLength = 176;
+    const unidades = [
+      { label: 'D', value: dias },
+      { label: 'H', value: horas },
+      { label: 'M', value: minutos },
+      { label: 'S', value: segundos }
+    ];
 
-function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = weddingDate - now;
-
-  if (distance <= 0) {
-    document.getElementById("contador").innerHTML = "💍 O grande dia chegou!";
-    return;
-  }
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  daysElement.textContent = String(days).padStart(2, "0");
-  hoursElement.textContent = String(hours).padStart(2, "0");
-  minutesElement.textContent = String(minutes).padStart(2, "0");
-  secondsElement.textContent = String(seconds).padStart(2, "0");
-
-  daysCircle.style.strokeDashoffset = circleLength - (days % 365) * (circleLength / 365);
-  hoursCircle.style.strokeDashoffset = circleLength - (hours % 24) * (circleLength / 24);
-  minutesCircle.style.strokeDashoffset = circleLength - (minutes % 60) * (circleLength / 60);
-  secondsCircle.style.strokeDashoffset = circleLength - (seconds % 60) * (circleLength / 60);
+    document.getElementById("contador").innerHTML = '';
+    unidades.forEach(u => {
+      const item = document.createElement('div');
+      item.classList.add('countdown-item');
+      item.innerHTML = `<svg><circle cx="30" cy="30" r="28"></circle><circle cx="30" cy="30" r="28"></circle></svg><div class="number">${u.value}</div><span>${u.label}</span>`;
+      document.getElementById("contador").appendChild(item);
+    });
+  }, 1000);
 }
 
-setInterval(updateCountdown, 1000);
-updateCountdown();
+iniciarContagem();
+
 
