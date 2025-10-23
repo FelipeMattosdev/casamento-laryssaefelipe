@@ -48,9 +48,12 @@ body::before {
   top: 15px;
   right: 15px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
   gap: 10px;
   z-index: 5;
-  flex-wrap: wrap;
+  max-width: 95%;
 }
 
 .countdown-item {
@@ -75,12 +78,12 @@ body::before {
 }
 
 .countdown-item svg circle:first-child {
-  stroke: rgba(255,255,255,0.2); /* fundo do círculo */
+  stroke: rgba(255,255,255,0.2);
 }
 
 .countdown-item svg circle:last-child {
-  stroke: #fff; /* cor do círculo de contagem */
-  stroke-dasharray: 175; /* 2 * PI * 28 */
+  stroke: #fff;
+  stroke-dasharray: 175;
   stroke-dashoffset: 0;
   transition: stroke-dashoffset 0.5s linear;
 }
@@ -101,20 +104,36 @@ body::before {
   color: #fff;
 }
 
-/* Responsivo */
+/* 🔹 Ajuste especial para telas pequenas */
 @media (max-width: 600px) {
   #contador {
-    top: 10px;
-    right: 10px;
-    gap: 6px;
+    position: relative;
+    top: auto;
+    right: auto;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 0 10px;
+    gap: 8px;
   }
+
   .countdown-item {
     width: 50px;
     height: 50px;
   }
-  .countdown-item .number { font-size: 14px; }
-  .countdown-item span { font-size: 8px; bottom: -15px; }
-  .countdown-item svg { width: 50px; height: 50px; }
+
+  .countdown-item .number {
+    font-size: 14px;
+  }
+
+  .countdown-item span {
+    font-size: 9px;
+    bottom: -12px;
+  }
+
+  .countdown-item svg {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 
@@ -294,6 +313,7 @@ footer {
 .presentes-lista a:hover {
   background-color: #718a4a;
 }
+
 
 
 
