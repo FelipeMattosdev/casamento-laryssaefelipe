@@ -58,8 +58,8 @@ body::before {
 
 .countdown-item {
   position: relative;
-  width: 45px;  
-  height: 45px;
+  width: 30px;  
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,8 +67,8 @@ body::before {
 
 .countdown-item svg {
   position: absolute;
-  width: 45px;  /* antes 60px */
-  height: 45px; /* antes 60px */
+  width: 30px;  /* antes 60px */
+  height: 30px; /* antes 60px */
   transform: rotate(-90deg);
 }
 
@@ -117,8 +117,8 @@ body::before {
   }
 
  .countdown-item {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
   }
 
   .countdown-item .number {
@@ -126,8 +126,8 @@ body::before {
   }
 
   .countdown-item span {
-    font-size: 7px;
-    bottom: -10px;
+    font-size: 5px;
+    bottom: -8px;
   }
 }
 
@@ -314,6 +314,7 @@ footer {
 .presentes-lista a:hover {
   background-color: #718a4a;
 }
+
 
 
 
