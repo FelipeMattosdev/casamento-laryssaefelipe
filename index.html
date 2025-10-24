@@ -127,12 +127,28 @@
   <!-- JS -->
   <script src="scripts.js"></script>
   <!-- Áudio invisível do YouTube -->
+<!-- Botão para tocar música -->
+<a href="#" id="btnPlayMusica" class="btn">Ouvir Música</a>
+
+<!-- iframe invisível -->
 <iframe 
-  src="https://www.youtube.com/embed/b_CpWmkhwq0?autoplay=1&loop=1&playlist=b_CpWmkhwq0&controls=0&modestbranding=1&rel=0&showinfo=0" 
+  id="audioYoutube"
+  src="https://www.youtube.com/embed/b_CpWmkhwq0?loop=1&playlist=b_CpWmkhwq0&controls=0&modestbranding=1&rel=0&showinfo=0" 
   frameborder="0" 
   allow="autoplay" 
   style="width:0; height:0; border:0; position:absolute;">
 </iframe>
+
+<script>
+  const btn = document.getElementById('btnPlayMusica');
+  const iframe = document.getElementById('audioYoutube');
+
+  btn.addEventListener('click', () => {
+    // Toca o áudio disparando autoplay
+    iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+    btn.style.display = 'none'; // esconde botão após clicar
+  });
+</script>
 
 </body>
 </body>
