@@ -225,7 +225,7 @@ h2 {
 .map-links a:first-child { color: #d4af37; }
 .map-links a:last-child { color: #556B2F; }
 
-/* Botões */
+/* Botões já existentes e novos */
 .btn {
   display: inline-block;
   background-color: #556B2F;
@@ -235,11 +235,23 @@ h2 {
   font-weight: 700;
   text-decoration: none;
   transition: background-color 0.3s ease;
-  margin-top: 1rem;
+  margin-top: 1rem; /* garante espaçamento entre botões */
   font-family: 'Quicksand', sans-serif;
 }
 
-.btn:hover { background-color: #718a4a; }
+/* Hover */
+.btn:hover {
+  background-color: #718a4a;
+}
+
+/* Mobile - ajuste do tamanho do botão */
+@media (max-width: 600px) {
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+  }
+}
 
 /* Carrossel */
 .carousel-container {
@@ -313,6 +325,7 @@ footer {
 .presentes-lista a:hover {
   background-color: #718a4a;
 }
+
 
 
 
