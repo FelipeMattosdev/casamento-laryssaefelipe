@@ -31,117 +31,75 @@ body::before {
 
 /* Cabeçalho com monograma */
 .header-com-monograma {
-  background-image: url('img/monogramaLF.jpeg');
-  background-size: contain;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-color: #798e71;
-  padding-top: 220px;
-  padding-bottom: 1rem;
-  text-align: center;
-  position: relative;
+    background-image: url('img/monogramaLF.jpeg');
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-color: #798e71;
+    padding-top: 220px; /* pode ajustar para telas pequenas */
+    padding-bottom: 1rem;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* garante que fique acima do overlay */
+}
+
+/* Overlay branco suave */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.65);
+    z-index: 0; /* fica atrás de header e conteúdo */
 }
 
 /* Contador moderno */
 #contador {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 10px;
-  z-index: 5;
-  max-width: 95%;
-}
-
-.countdown-item {
-  position: relative;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.countdown-item svg {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  transform: rotate(-90deg);
-}
-
-.countdown-item svg circle {
-  fill: none;
-  stroke-width: 4;
-}
-
-.countdown-item svg circle:first-child {
-  stroke: rgba(255,255,255,0.2);
-}
-
-.countdown-item svg circle:last-child {
-  stroke: #fff;
-  stroke-dasharray: 175;
-  stroke-dashoffset: 0;
-  transition: stroke-dashoffset 0.5s linear;
-}
-
-.countdown-item .number {
-  position: relative;
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  font-family: 'Quicksand', sans-serif;
-  z-index: 1;
-}
-
-.countdown-item span {
-  position: absolute;
-  bottom: -18px;
-  font-size: 10px;
-  color: #fff;
-}
-
-/* 🔹 Ajuste especial para telas pequenas */
-@media (max-width: 600px) {
-  #contador {
-    position: relative;
-    top: auto;
-    top: 30px; /* empurra o contador um pouco para baixo */
-    right: auto;
-    justify-content: center;
-    margin-top: 1rem;
-    margin: 0 auto;
-    padding: 0 10px;
-    gap: 8px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
     gap: 10px;
-  }
+    z-index: 2; /* acima do header */
+    max-width: 95%;
+}
 
-  .countdown-item {
-    width: 50px;
-    height: 50px;
-    width: 55px;
-    height: 55px;
-  }
+/* Ajuste para telas pequenas */
+@media (max-width: 600px) {
+    .header-com-monograma {
+        padding-top: 180px; /* reduz para caber no mobile */
+    }
 
-  .countdown-item .number {
-    font-size: 14px;
-    font-size: 15px;
-  }
+    #contador {
+        position: relative;
+        top: auto;
+        right: auto;
+        justify-content: center;
+        margin: 1rem auto 0 auto;
+        gap: 8px;
+    }
 
-  .countdown-item span {
-    font-size: 9px;
-    bottom: -12px;
-    font-size: 10px;
-    bottom: -14px;
-  }
+    .countdown-item {
+        width: 55px;
+        height: 55px;
+    }
 
-  .countdown-item svg {
-    width: 50px;
-    height: 50px;
-    width: 55px;
-    height: 55px;
-  }
+    .countdown-item .number {
+        font-size: 15px;
+    }
+
+    .countdown-item span {
+        font-size: 10px;
+        bottom: -14px;
+    }
+
+    .countdown-item svg {
+        width: 55px;
+        height: 55px;
+    }
 }
