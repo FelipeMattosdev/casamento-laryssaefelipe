@@ -29,40 +29,56 @@ body::before {
   z-index: -1;
 }
 
-/* ===== Header com monograma e contador ===== */
 .header-com-monograma {
   position: relative;
-  text-align: center;
-  background-image: url("img/monograma.png"); /* ajuste o caminho da sua logo */
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center top;
-  padding-top: 220px; /* espaço suficiente para o monograma */
-  padding-bottom: 40px; /* espaço para o contador */
+  display: flex;
+  flex-direction: column; /* Título e contador empilhados */
+  align-items: center;    /* Centraliza horizontalmente */
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: rgba(255,255,255,0.65); /* Overlay leve sobre o fundo */
 }
 
-/* Contador centralizado */
+.monograma-titulo img {
+  width: 160px;   /* Ajuste do tamanho do monograma */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.monograma-titulo h1 {
+  font-family: 'Parisienne', cursive;
+  font-size: 2.8rem;
+  color: #556B2F;
+  margin: 0;
+}
+
 #contador {
-  position: relative;
-  display: inline-block;
-  margin-top: 10px;
+  margin-top: 20px;
   font-size: 1.6rem;
   color: #333;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
 }
 
 /* Ajuste para mobile */
 @media (max-width: 600px) {
-  .header-com-monograma {
-    padding-top: 160px; /* reduz altura do monograma */
-    padding-bottom: 30px;
-    background-size: 80%;
+  .monograma-titulo img {
+    width: 120px;
+    margin-bottom: 15px;
+  }
+
+  .monograma-titulo h1 {
+    font-size: 2rem;
   }
 
   #contador {
     font-size: 1.2rem;
-    margin-top: 15px;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 }
+
 
 
 /* Conteúdo */
@@ -241,6 +257,7 @@ footer {
 .presentes-lista a:hover {
   background-color: #718a4a;
 }
+
 
 
 
