@@ -33,29 +33,30 @@ body::before {
 .header-com-monograma {
   position: relative;
   text-align: center;
+  background-color: #7a8c70; /* verde de fundo */
   background-image: url("img/monograma.png");
-  background-size: contain;
   background-repeat: no-repeat;
-  background-position: center top;
-  padding-top: 250px; /* mais espaço para telas maiores */
-  padding-bottom: 40px;
+  background-position: center 40px; /* empurra o monograma um pouco pra baixo */
+  background-size: 180px auto; /* ajuste conforme o tamanho real da logo */
+  padding-top: 250px; /* espaço para o monograma */
+  padding-bottom: 60px; /* espaço para o contador */
 }
 
-/* Contador centralizado */
+/* Contador */
 #contador {
-  position: relative;
   display: inline-block;
   margin-top: 10px;
   font-size: 1.6rem;
-  color: #333;
+  color: #ffffff; /* branco, pois o fundo é verde */
 }
 
-/* Ajuste para mobile */
+/* ===== Ajuste para mobile ===== */
 @media (max-width: 600px) {
   .header-com-monograma {
-    background-size: 90%;
-    padding-top: 200px; /* aumenta para evitar sobreposição */
-    padding-bottom: 30px;
+    background-position: center 30px;
+    background-size: 140px auto; /* reduz o monograma */
+    padding-top: 200px; /* mais espaço acima */
+    padding-bottom: 50px; /* garante espaço abaixo */
   }
 
   #contador {
@@ -242,6 +243,7 @@ footer {
 .presentes-lista a:hover {
   background-color: #718a4a;
 }
+
 
 
 
