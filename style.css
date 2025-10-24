@@ -29,41 +29,41 @@ body::before {
   z-index: -1;
 }
 
-/* ===== Header com fundo verde (monograma) ===== */
 .header-com-monograma {
-  width: 100%;
-  height: 340px; /* define a altura exata da imagem */
-  background-image: url("img/monograma.png");
-  background-size: cover; /* mostra o monograma completo */
-  background-position: center top;
+  position: relative;
+  text-align: center;
+  background-image: url("img/monograma.png"); /* sua imagem verde completa */
   background-repeat: no-repeat;
-  display: block;
+  background-position: center top;
+  background-size: cover;
+  padding-top: 320px; /* aumenta o espaço para o monograma */
+  padding-bottom: 80px; /* garante espaço para o contador */
 }
 
-/* ===== Contador separado abaixo do monograma ===== */
+/* Contador */
 #contador {
-  text-align: center;
-  margin-top: -20px; /* aproxima levemente do fundo verde, ajuste fino */
+  display: inline-block;
+  margin-top: 20px;
   font-size: 1.6rem;
   color: #ffffff;
   position: relative;
-  z-index: 2;
+  z-index: 2; /* garante que fique acima do fundo */
 }
 
 /* ===== Ajuste para mobile ===== */
 @media (max-width: 600px) {
   .header-com-monograma {
-    height: 280px; /* reduz área da imagem */
-    background-size: contain;
+    background-position: center top;
+    background-size: cover;
+    padding-top: 380px; /* aumenta o espaço acima no celular */
+    padding-bottom: 100px; /* mais espaço abaixo do monograma */
   }
 
   #contador {
     font-size: 1.2rem;
-    margin-top: -10px; /* ajusta espaçamento abaixo da imagem */
+    margin-top: 25px;
   }
 }
-
-
 
 
 /* Conteúdo */
@@ -242,6 +242,7 @@ footer {
 .presentes-lista a:hover {
   background-color: #718a4a;
 }
+
 
 
 
