@@ -73,7 +73,7 @@
       </div>
     </section>
 
-    <section id="confirmar" class="card">
+   <section id="confirmar" class="card">
   <h2>Confirme sua Presença</h2>
   <p>O casamento é por adesão: rodízio de pizza, com refrigerante e suco liberado.</p>
   <p><strong>Valor:</strong> R$ 90 por pessoa</p>
@@ -81,15 +81,30 @@
   <p>Contamos com a colaboração de todos para confirmar e realizar o pagamento até a data, para que possamos nos organizar com carinho e passar ao restaurante a lista final de convidados.</p>
 
   <!-- Botão principal de confirmação -->
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhskApgfmOshKadt6SAYfoTArhqUhUsOPiiqk-IzihE76Qmw/viewform" class="btn" target="_blank">
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdhskApgfmOshKadt6SAYfoTArhqUhUsOPiiqk-IzihE76Qmw/viewform" 
+     class="btn" target="_blank">
     Confirmar Presença
   </a>
 
-  <!-- Novo botão alinhado abaixo -->
-  <a href="https://docs.google.com/document/d/EXEMPLO_DO_LINK" class="btn" target="_blank">
-    Link de Pagamento
-  </a>
+  <!-- Caixa de PIX -->
+  <div class="pix-box">
+    <h3>Pagamento da Adesão</h3>
+    <p><strong>Chave PIX (telefone – Mercado Pago):</strong><br>(13) 99138-8278</p>
+    <p><strong>Titular:</strong> Laryssa Paixão — Mercado Pago</p>
+
+    <!-- Botão de copiar a chave PIX -->
+    <button class="btn copy-pix" onclick="copiarPix()">Copiar Chave PIX</button>
+  </div>
 </section>
+
+<script>
+function copiarPix() {
+  const chave = "(13) 99138-8278";
+  navigator.clipboard.writeText(chave);
+  alert("Chave PIX copiada!");
+}
+</script>
+
 
     <!-- Lista de presentes -->
     <section id="lista-presentes" class="card">
